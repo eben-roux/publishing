@@ -24,6 +24,8 @@ namespace Markdown.Pdf.Formatter
                 return;
             }
 
+            Console.ResetColor();
+
             File.WriteAllText(file, new Regex("^#\\s", RegexOptions.Multiline).Replace(File.ReadAllText(file), "\\newpage\r\n# "));
         }
     }
